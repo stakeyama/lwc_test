@@ -11,7 +11,7 @@ jobs:
     if: github.event.pull_request.merged == true
     steps:
 
-     name: Make temporary directory
+     - name: Make temporary directory
         run: |
           mkdir ./temp
 
