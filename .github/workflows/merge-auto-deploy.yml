@@ -3,10 +3,10 @@ on:
   pull_request:
     branches:
       - integration
-      types: [closed]
+    types: [closed]
 
 jobs:
-  deploy_to_sandbox:
+  merge-auto-deploy:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
