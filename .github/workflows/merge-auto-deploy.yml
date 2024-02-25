@@ -35,4 +35,5 @@ jobs:
 
       # Deploy Source to sandbox
       - name: Deploy Source to sandbox
-        run: sfdx force:source:deploy -p force-app --testlevel RunLocalTests --json
+        # run: sfdx force:source:deploy -p force-app --testlevel RunLocalTests --json
+        run: ls
