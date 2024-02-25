@@ -32,8 +32,9 @@ jobs:
         run: echo -n ${{ secrets.PRIVATE_KEY_BASE64ED }} | base64 -d > ./temp/server.key
 
       # Authenticate to access the sandbox
-      # Deploy Source to sandbox
       - name: Authenticate to access the sandbox
-        run: |
-            sfdx force:auth:jwt:grant --instanceurl=https://login.salesforce.com/ --jwtkeyfile ./temp/server.key --username ${{ secrets.ORG_USER }} --clientid ${{ secrets.CLIENT_ID }}
-            sfdx force:source:deploy --manifest manifest/package.xml
+        run: sfdx force:auth:jwt:grant --instanceurl=https://login.salesforce.com/ --jwtkeyfile ./temp/server.key --username ${{ secrets.ORG_USER }} --clientid ${{ secrets.CLIENT_ID }}  --alias testOrg
+
+      # Deploy Source to sandbox
+      - name: Deploy Source to sandbox      
+        run: sfdx force:source:deploy --manifest manifest/package.xml --target-org testOrg
