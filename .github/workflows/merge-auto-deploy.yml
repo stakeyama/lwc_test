@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+
+     name: Make temporary directory
+        run: |
+          mkdir ./temp
+
       # Install Salesforce CLI
       - name: Install Salesforce CLI
         run: |
