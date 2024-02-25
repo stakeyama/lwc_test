@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+      - name: Check out code
+        uses: actions/checkout@v3
 
       - name: Make temporary directory
         run: |
@@ -35,5 +37,4 @@ jobs:
 
       # Deploy Source to sandbox
       - name: Deploy Source to sandbox
-        # run: sfdx force:source:deploy -p force-app --testlevel RunLocalTests --json
-        run: ls
+        run: sfdx force:source:deploy --manifest manifest/package.xml 
