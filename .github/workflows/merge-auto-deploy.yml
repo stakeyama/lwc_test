@@ -1,0 +1,33 @@
+name: salesforce ci
+on: 
+  pull_request:
+    branches:
+      - integration
+      types: [closed]
+
+jobs:
+  deploy_to_sandbox:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      # Install Salesforce CLI
+      - name: Install Salesforce CLI
+        run: |
+          wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+          mkdir ./temp/sfdx-cli
+          tar xJf sfdx-linux-x64.tar.xz -C ./temp/sfdx-cli --strip-components 1
+          echo "./temp/sfdx-cli/bin" >> $GITHUB_PATH
+      - name: Display sfdx version
+        run: sfdx version
+
+      # Save into private-key
+      - name: Save into private-key
+        run: echo -n ${{ secrets.PRIVATE_KEY_BASE64ED }} | base64 -d > ./temp/server.key
+
+      # Authenticate to access the sandbox
+      - name: Authenticate to access the sandbox
+        run: sfdx force:auth:jwt:grant --instanceurl=https://login.salesforce.com/ --jwtkeyfile ./temp/server.key --username ${{ secrets.ORG_USER }} --clientid ${{ secrets.CLIENT_ID }}
+
+      # Deploy Source to sandbox
+      - name: Deploy Source to sandbox
+        run: sfdx force:source:deploy
