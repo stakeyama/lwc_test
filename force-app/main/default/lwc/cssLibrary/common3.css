@@ -1,0 +1,3211 @@
+/* ==========================================================================
+   BASE LAYOUT
+   ======================================================================= */
+/* --------------------------------------------------------------------------
+    GLOBAL HEADER
+   ----------------------------------------------------------------------- */
+   @media all and (min-width: 761px) {
+    .gheader {
+      /* position: fixed; */
+      width: 100%;
+      /* z-index: 100; */
+      background: #fff;
+    }
+  
+    /* 非表示 */
+    .gheader-tab,
+    .gheader-search--menu,
+    .gheader-close {
+      display: none !important;
+    }
+  
+    /* iOS Androidは非表示 */
+    .is-ua-smartdevice .gheader-user__item--vendor,
+    .is-ua-smartdevice .gheader-user__item--provisional,
+    .is-ua-smartdevice .gheader-user__item--applicant,
+    .is-ua-smartdevice .gheader-user__item--temporary {
+      display: none !important;
+    }
+  
+    .gheader-main {
+      width: 100%;
+      background: #fff;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .is-opened-purpose-pc .gheader-main {
+      box-shadow: none;
+    }
+    .gheader-main__inner {
+      margin: 0 auto;
+      max-width: 1366px;
+    }
+    .gheader-main__body {
+      width: 100%;
+      height: 192px;
+      position: relative;
+    }
+    .main-container {
+      padding-top: 192px;
+    }
+    .gheader-purpose__body {
+      opacity: 0;
+    }
+    /* logo */
+    .gheader__logo {
+      position: absolute;
+      left: 10px;
+    }
+    .gheader__logo-id {
+      width: 270px;
+      margin: 0 auto 13px 0;
+    }
+    .gheader__logo-btn {
+      display: block;
+      width: 334px;
+      height: 44px;
+      background: url(./logo-pc-2023.png) 0 0 no-repeat;
+      background-size: 334px 44px;
+    }
+    .gheader__logo-tag {
+      font-size: 125%;
+      width: 400px;
+      margin: 0 auto;
+      line-height: 1.57;
+      color: #000;
+      font-weight: bold;
+    }
+    /* IT導入補助金2021年交付規程・公募要領 */
+    .delivery_rules_bnr {
+      width: auto;
+      margin-left: 2px;
+      position: absolute;
+      top: 44px;
+      /* left: 325px; */
+      left: 355px;
+      display: flex;
+      align-items: center;
+    }
+    .delivery_rules_bnr.ab-digital-type p,
+    .delivery_rules_bnr.multiple-type p {
+      font-size: 14px;
+      margin-right: 1em;
+      font-weight: bold;
+      color: #fff;
+      padding: 3px 2px 4px;
+      text-align: left;
+      /* width: 182px; */
+      width: auto;
+    }
+    .delivery_rules_bnr.ab-digital-type p {
+      /* background-color: #359440; */
+      color: #359440;
+    }
+    .delivery_rules_bnr.multiple-type p {
+      /* background-color: #cd532f; */
+      color: #cd532f;
+    }
+    .delivery_rules_btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #fff;
+      color: #359440;
+      border: #359440 2px solid;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .sec_bnr {
+      position: absolute;
+      display: flex;
+      top: 44px;
+      left: 355px;
+    }
+    .Multipletype_bnr {
+      position: absolute;
+      display: flex;
+      top: 44px;
+      right: 0;
+      /* right: 355px; */
+    }
+    .security_bnr,
+    .multiple_bnr  {
+      width: auto;
+      margin-left: 2px;
+      /* position: absolute; */
+      /* top: 44px;
+      left: 355px; */
+      display: flex;
+      align-items: center;
+    }
+    .gBizID_bnr {
+      width: auto;
+      margin-left: 4px;
+      /* position: absolute; */
+      /* top: 44px;
+      left: 470px; */
+      display: flex;
+      align-items: center;
+      width: 88px;
+    }
+    .gBizID_bnr img {
+      width:100%;
+    }
+    .security-type_btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      background-color: #fff;
+      border: #00af4f 2px solid;
+      background-color: #00af4f;
+      color: #fff;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .multiple-type_btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      background-color: #fff;
+      /* color: #cd532f;
+      border: #cd532f 2px solid; */
+      border: #cd532f 2px solid;
+      background-color: #cd532f;
+      color: #fff;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .Multipletype_btn {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      vertical-align: top;
+      background-color: #fff;
+      border: #359440 2px solid;
+      background-color: #359440;
+      color: #fff;
+      text-align: center;
+      padding: 3px 25px 4px;
+    }
+    .Multipletype_btn::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-white-pc.png);
+    }
+    .delivery_rules_btn.u-hide-pc {
+      display: none;
+    }
+    /* ユーティリティー */
+    .gheader-utility {
+      position: absolute;
+      right: 1.172%;
+      top: 15px;
+    }
+    .gheader-utility__body {
+      text-align: right;
+    }
+    .gheader-utility__item {
+      display: inline-block;
+      margin-left: 14px;
+      margin-top: 2px;
+    }
+    .gheader-utility__item:first-child {
+      margin-left: 0;
+    }
+    .gheader-utility__btn {
+      display: block;
+      color: #000000;
+    }
+    .gheader-utility__btn::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-right: 5px;
+    }
+    .gheader-utility__label {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 140%;
+      line-height: 14px;
+      color: #000;
+    }
+    .gheader-utility__item--simulator .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-simulator-pc.png);
+      background-size: contain;
+    }
+    .gheader-utility__item--download .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-download-pc.png);
+    }
+    .gheader-utility__item--contact .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-contact-pc.png);
+    }
+    .gheader-utility__item--faq .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-faq-pc.png);
+    }
+    .gheader-utility__item--reduction-entry .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-reduction-entry-pc.png);
+    }
+    .gheader-utility__item--facebook .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-facebook-pc.png);
+    }
+    .gheader-utility__item--sme .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-utility-sme-pc.png);
+    }
+    .gheader-utility__item--facebook .gheader-utility__btn::after,
+    .gheader-utility__item--sme .gheader-utility__btn::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-left: 4px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-dark-pc.png);
+    }
+  
+    /* HOVER */
+    .no-touchevents .gheader-utility__btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .gheader-utility__btn:hover {
+      color: #359440;
+    }
+  
+    /* ユーザーログイン */
+    .gheader-user {
+      position: absolute;
+      right: 1.172%;
+      top: 44px;
+    }
+    .gheader-user__body {
+    }
+    .gheader-user__body::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .gheader-user__item--gBizID {
+      width: 192px;
+      float: left;
+      margin-left: 2px;
+    }
+    .gheader-user__item--gBizID_delivery_rules {
+      width: 88px;
+      float: left;
+      margin-left: 4px;
+    }
+    .gheader-user__item--gBizID_delivery_rules img {
+      width:100%;
+    }
+    .gheader-user__item--report,
+    .gheader-user__item--faq,
+    .gheader-user__item--eventinformation,
+    .gheader-user__item--purpose {
+      float: left;
+      margin-left: 4px;
+    }
+    .gheader-user__item--security {
+      float: left;
+    }
+    .gheader-user__item--multiple-type {
+      float: left;
+      margin-left: 4px;
+    }
+    .gheader-user__item--provisional {
+      width: 230px;
+      float: left;
+      margin-left: 16px;
+    }
+    .gheader-user__item--vendor {
+      width: 192px;
+      float: left;
+      margin-left: 2px;
+    }
+    .gheader-user__item--applicant {
+      width: 192px;
+      margin-left: 4px;
+      float: left;
+    }
+    .gheader-user__item--temporary {
+      clear: left;
+      margin-left: 215px;
+      padding: 5px 0 0 8px;
+    }
+  
+    /* 事業実績報告と効果報告 */
+    .user-report-btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #fff;
+      color: #9c059e;
+      border: #9c059e 2px solid;
+      text-align: center;
+      padding: 12px 2px 11px;
+    }
+    .user-report-btn__label {
+      display: inline-block;
+      font-size: 140%;
+      line-height: 1.333333333;
+      font-weight: bold;
+      padding-top: 1px;
+    }
+    /* よくある質問 */
+    .user-faq-btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #fff;
+      color: #05759e;
+      border: #05759e 2px solid;
+      text-align: center;
+      padding: 12px 2px 11px;
+    }
+    .user-faq-btn__label {
+      display: inline-block;
+      font-size: 140%;
+      line-height: 1.333333333;
+      font-weight: bold;
+      padding-top: 1px;
+    }
+    /* 関連資料・動画等 */
+    .user-eventinformation-btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #fff;
+      color: #a97d1d;
+      border: #a97d1d 2px solid;
+      text-align: center;
+      padding: 12px 2px 11px;
+    }
+    .user-eventinformation-btn__label {
+      display: inline-block;
+      font-size: 140%;
+      line-height: 1.333333333;
+      font-weight: bold;
+      padding-top: 1px;
+    }
+    /* 目的から探す */
+    .user-purpose-btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #f57a0d;
+      border: #f57a0d 2px solid;
+      color: #fff;
+      text-align: center;
+      padding: 12px 2px 11px;
+    }
+    .user-purpose-btn__label {
+      display: inline-block;
+      font-size: 140%;
+      line-height: 1.333333333;
+      font-weight: bold;
+      padding-top: 1px;
+    }
+  
+    /* ログイン */
+    .user-login-btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 0px 2px 0;
+      color: #009e96;
+      border: #009e96 2px solid;
+    }
+    .gheader-user__item--gBizID .gBizID-btn {
+    }
+    .gheader-user__item--provisional .user-login-btn {
+      background-color: #fff;
+      color: #4088c8;
+    }
+    .gheader-user__item--vendor .user-login-btn {
+      background-color: #fff;
+      color: #ffa200;
+      border: #ffa200 2px solid;
+    }
+    .gheader-user__item--applicant .user-login-btn {
+      background-color: #fff;
+    }
+    .user-login-btn__body {
+      padding: 15px 20px 15px 11px;
+      display: block;
+      text-align: center;
+      position: relative;
+      height: 48px;
+    }
+    /*.gheader-user__item--provisional .user-login-btn__body {
+      border-color: #4088c8;
+      padding: 15px 20px 15px 11px;
+    }*/
+    .user-login-btn__body::before,
+    .user-login-btn__body::after {
+      content: "";
+      width: 8px;
+      height: 16px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 8px 16px;
+      display: none;
+    }
+    .user-login-btn__body::before {
+      /* background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-arrow-yellow-pc.png); */
+      background-image: none;
+    }
+    .user-login-btn__body::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-arrow-blue-pc.png);
+      opacity: 0;
+    }
+    .gheader-user__item--provisional .user-login-btn__body::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-arrow-blue-pc.png);
+    }
+    .gheader-user__item--applicant .user-login-btn__body::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-arrow-yellow-pc.png);
+    }
+    .user-login-btn__ico {
+      width: 16px;
+      height: 16px;
+      display: block;
+      position: absolute;
+      right: 2px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+    .user-login-btn__ico::before,
+    .user-login-btn__ico::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+    }
+    .user-login-btn__ico::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-login-yellow-pc.png);
+    }
+    .user-login-btn__ico::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-login-pc.png);
+      opacity: 0;
+    }
+    .gheader-user__item--applicant .user-login-btn__ico::before {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-login-green-pc.png);
+    }
+    .gheader-user__item--applicant .user-login-btn__ico::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-login-pc.png);
+    }
+    .gheader-user__item--provisional .user-login-btn__ico {
+      right: 5px;
+    }
+    .gheader-user__item--provisional .user-login-btn__ico::before {
+      background-size: 18px 18px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-blue-pc.png);
+    }
+    .user-login-btn__label {
+      display: inline-block;
+      font-size: 150%;
+      line-height: 16px;
+      font-weight: bold;
+    }
+  
+    /* 仮登録 */
+    .user-temporary-btn {
+      display: block;
+      color: #fff;
+    }
+    .user-temporary-btn::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-gheader-user-disc-arrow-pc.png);
+      margin-right: 6px;
+    }
+    .user-temporary-btn__label {
+      font-size: 140%;
+      line-height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+    /* HOVER */
+    .no-touchevents .gBizID-btn {
+      -webkit-transition: color, opacity 0.15s linear;
+      transition: color, opacity 0.15s linear;
+    }
+    .no-touchevents .gBizID-btn:hover {
+      opacity: 0.7;
+    }
+  
+    .no-touchevents .user-report-btn,
+    .no-touchevents .user-faq-btn,
+    .no-touchevents .user-faq-btn {
+      -webkit-transition: color, background-color 0.15s linear;
+      transition: color, background-color 0.15s linear;
+    }
+    .no-touchevents .user-report-btn:hover {
+      color: #fff;
+      background-color: #9c059e;
+    }
+    .no-touchevents .user-faq-btn:hover {
+      color: #fff;
+      background-color: #05759e;
+    }
+    .no-touchevents .user-eventinformation-btn:hover {
+      color: #fff;
+      background-color: #a97d1d;
+    }
+    .no-touchevents .user-purpose-btn:hover {
+      color: #f57a0d;
+      background-color: rgba(245, 122, 13, 0.1);
+    }
+    .no-touchevents .delivery_rules_btn:hover {
+      color: #fff;
+      background-color: #359440;
+    }
+    .no-touchevents .security-type_btn:hover {
+      color: #00af4f;
+      border: #dcf4e7 2px solid;
+      background-color: #dcf4e7;
+    }
+    .no-touchevents .multiple-type_btn:hover {
+      color: #cd532f;
+      border: #eaf4ec 2px solid;
+      background-color: #eaf4ec;
+    }
+    .no-touchevents  .Multipletype_btn:hover {
+      color: #359440;
+      border: #eaf4ec 2px solid;
+      background-color: #eaf4ec;
+    }
+    .no-touchevents  .Multipletype_btn:hover::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-green-pc.png);
+    }
+  
+    .no-touchevents .gheader-user__item--vendor .user-login-btn,
+    .no-touchevents .gheader-user__item--applicant .user-login-btn,
+    .no-touchevents .gheader-user__item--provisional .user-login-btn {
+      -webkit-transition: color, background-color 0.15s linear;
+      transition: color, background-color 0.15s linear;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn
+      .user-login-btn__body,
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn
+      .user-login-btn__body {
+      -webkit-transition: border-color 0.15s linear;
+      transition: border-color 0.15s linear;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn
+      .user-login-btn__body::after,
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn
+      .user-login-btn__body::after {
+      -webkit-transition: opacity 0.15s linear;
+      transition: opacity 0.15s linear;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn
+      .user-login-btn__ico::after,
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn
+      .user-login-btn__ico::after {
+      -webkit-transition: opacity 0.15s linear;
+      transition: opacity 0.15s linear;
+    }
+    .no-touchevents .gheader-user__item--vendor .user-login-btn:hover {
+      color: #fff;
+      background-color: #ffa200;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn:hover
+      .user-login-btn__body {
+      border-color: #0096cf;
+    }
+    .no-touchevents .gheader-user__item--provisional .user-login-btn:hover {
+      background-color: #eaf4ec;
+    }
+    .no-touchevents .gheader-user__item--applicant .user-login-btn:hover {
+      color: #fff;
+      background-color: #009e96;
+    }
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn:hover
+      .user-login-btn__body {
+      border-color: #359440;
+    }
+  
+    .no-touchevents .user-temporary-btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .user-temporary-btn:hover {
+      color: #359440;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn:hover
+      .user-login-btn__body::after,
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn:hover
+      .user-login-btn__body::after {
+      opacity: 1;
+    }
+    .no-touchevents
+      .gheader-user__item--vendor
+      .user-login-btn:hover
+      .user-login-btn__ico::after,
+    .no-touchevents
+      .gheader-user__item--applicant
+      .user-login-btn:hover
+      .user-login-btn__ico::after {
+      opacity: 1;
+    }
+  
+    /* グロナビ */
+    .gheader-gnav {
+      position: absolute;
+      right: 1.172%;
+      bottom: 0;
+      width: calc(100% - 1.172% - 20px);
+    }
+    .gheader-gnav__item {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
+    .gheader-gnav__body {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .gheader-gnav__btn {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 64px;
+      width: 100%;
+      border-left: #fff 1px solid;
+      text-align: center;
+      position: relative;
+      background-color: #359440;
+    }
+    /*.gheader-gnav__item--eventinformation .gheader-gnav__btn {
+      border-right:#8098b0 1px solid;
+    }*/
+    .gheader-gnav__label {
+      display: block;
+      font-size: 160%;
+      line-height: 1.25;
+      text-align: center;
+      width: 100%;
+      font-feature-settings: "palt";
+    }
+    .gheader-gnav__item--purpose .gheader-gnav__btn {
+      background-color: #9e0505;
+    }
+    .gheader-gnav__item--purpose .gheader-gnav__label {
+      font-weight: bold;
+    }
+  
+    /* グロナビ カレント */
+    .is-dir-first-one .gheader-gnav__item--first-one .gheader-gnav__btn::before,
+    .is-dir-overview .gheader-gnav__item--overview .gheader-gnav__btn::before,
+    .is-dir-schedule .gheader-gnav__item--schedule .gheader-gnav__btn::before,
+    .is-dir-procedure .gheader-gnav__item--procedure .gheader-gnav__btn::before,
+    .is-dir-applicant .gheader-gnav__item--applicant .gheader-gnav__btn::before,
+    .is-dir-vendor .gheader-gnav__item--vendor .gheader-gnav__btn::before,
+    .is-dir-eventinformation
+      .gheader-gnav__item--eventinformation
+      .gheader-gnav__btn::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #9e0505;
+    }
+  
+    /* HOVER */
+    .no-touchevents .gheader-gnav__btn,
+    .no-touchevents .gheader-gnav__item--purpose .gheader-gnav__btn {
+      -webkit-transition: color, background-color 0.15s linear;
+      transition: color, background-color 0.15s linear;
+    }
+    .no-touchevents .gheader-gnav__btn:hover,
+    .is-opened-first-one-pc .gheader-gnav__item--first-one > .gheader-gnav__btn,
+    .is-opened-vendor-pc .gheader-gnav__item--vendor > .gheader-gnav__btn,
+    .is-opened-applicant-pc .gheader-gnav__item--applicant > .gheader-gnav__btn {
+      color: #359440;
+      background-color: #eaf4ec;
+    }
+    .no-touchevents .gheader-gnav__item--purpose .gheader-gnav__btn:hover {
+      color: #9e0505;
+      background-color: rgba(158,5,5,0.1);
+    }
+  }
+  
+  @media all and (min-width: 1150px) {
+    .user-report-btn__label {
+      font-size: 150%;
+    }
+    .gheader-user__item--provisional,
+    .gheader-user__item--applicant {
+      width: 122px;
+    }
+    .gheader-user__item--vendor {
+      width: 122px;
+    }
+    .gheader-user__item--vendor_v2 {
+      margin-left: 0;
+      width: 192px;
+      position: absolute;
+      bottom: 0;
+      right: 196px;
+    }
+    .gheader-user__item--applicant_v2 {
+      margin-left: 0;
+      width: 192px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .user-login-btn__label {
+      font-size: 160%;
+    }
+  }
+  
+  @media all and (min-width: 761px) {
+    .gheader-main__body {
+      height: 166px;
+    }
+    .main-container {
+      padding-top: 166px;
+    }
+    .main-container_v2 {
+      padding-top: 236px;
+    }
+    .is-ua-smartdevice .gheader-main__body {
+      /* height: 208px; */
+    }
+    .gheader-main__body_v2 {
+      height: 235px;
+    }
+    .is-ua-smartdevice .main-container {
+      /* padding-top: 208px; */
+      padding-top: 166px;
+    }
+  
+    .gheader__logo {
+      transform: scale(0.85);
+      left: 0;
+    }
+    .gheader__logo_2022 {
+      top: 10px;
+      transform: scale(0.85);
+      left: 0;
+    }
+    .is-ua-smartdevice .gheader__logo {
+      top: 8px;
+    }
+    .gheader-user__body_v2 {
+      position: relative;
+      padding-bottom: 55px;
+    }
+    .gheader-user__item--security {
+      width: auto;
+    }
+    .gheader-user__item--faq,
+    .gheader-user__item--report,
+    .gheader-user__item--eventinformation,
+    .gheader-user__item--purpose {
+      width: 192px;
+    }
+    .user-report-btn__label {
+      font-size: 12px;
+      letter-spacing: -0.05em;
+    }
+    .user-login-btn__body {
+      padding: 4px 20px 4px 11px;
+      height: 40px;
+    }
+    .gheader-user__item--provisional .user-login-btn__body {
+      padding: 10px 20px;
+    }
+    .user-login-btn__label {
+      font-size: 140%;
+    }
+    .gheader-user__item--temporary {
+      margin-left: 0;
+      padding: 14px 146px 0 0;
+      float: right;
+    }
+    .user-temporary-btn__label {
+      font-size: 130%;
+    }
+    .gheader-gnav__item--eventinformation .gheader-gnav__btn {
+      border-right: none;
+    }
+    .gheader-utility__label {
+      font-size: 120%;
+    }
+    .gheader-gnav__label {
+      font-size: 140%;
+    }
+  
+    .gheader-accordionmenu-sp {
+      display: none;
+    }
+  }
+  @media all and (max-width: 1320px) {
+    .is-ua-smartdevice .gheader__logo {
+      top: 50px;
+    }
+    .gheader-user__body {
+      position: relative;
+      padding-bottom: 55px;
+    }
+    .delivery_rules_btn.u-hide-pc {
+      display: none;
+    }
+    .gheader-user__item--applicant {
+      margin-left: 0;
+      width: 122px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .gheader-user__item--vendor {
+      margin-left: 0;
+      width: 122px;
+      position: absolute;
+      bottom: 0;
+      right: 126px;
+    }
+    .gheader-user__item--report {
+      margin-left: 0;
+      width: 192px;
+      position: absolute;
+      bottom: 0;
+      right: 196px;
+    }
+    .gheader-user__item--faq {
+      margin-left: 0;
+      width: 192px;
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+    }
+      .gheader-user__item--gBizID_delivery_rules {
+      margin-left: 0;
+      width: 88px;
+      position: absolute;
+      bottom: 0;
+      right: 448px;
+    }
+    .gheader-user__item--gBizID_delivery_rules a {
+      display: flex;
+    }
+  
+    .gheader-main__body {
+      height: 225px;
+    }
+    .main-container {
+      padding-top: 226px!important;
+    }
+    .is-opened-purpose-pc .gheader-sub {
+      bottom: 225px!important;
+    }
+  }
+  @media all and (max-width: 1024px) {
+    .main-container {
+      padding-top: 235px;
+    }
+    /* .gheader-main__body{
+    height: 255px;
+  } */
+    .gheader-user {
+      top: 44px;
+    }
+    .gheader-user__body {
+      position: relative;
+    }
+    .gheader-user__item--applicant {
+      margin-left: 0;
+      width: 122px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .gheader-user__item--vendor {
+      margin-left: 0;
+      width: 122px;
+      position: absolute;
+      bottom: 0;
+      right: 126px;
+    }
+    .gheader-user__item--report > a,
+    .gheader-user__item--multiple-type > a {
+      padding-left: 0;
+      padding-right: 0;
+      letter-spacing: -0.05em;
+      font-feature-settings: "palt";
+    }
+    .user-report-btn__label {
+      font-size: 12px;
+    }
+    .gheader-user__item--temporary {
+      padding: 14px 0 0 0;
+    }
+    .delivery_rules_bnr {
+      width: auto;
+      margin-left: 2px;
+      position: absolute;
+      top: 104px;
+      left: 25px;
+      display: flex;
+      align-items: center;
+    }
+    .gheader-utility {
+      top: 10px;
+    }
+  }
+  @media all and  (min-width: 761px) and (max-width: 1024px){
+    .gheader__logo {
+    }
+  }
+  @media all and (max-width: 760px) {
+    /* 非表示 */
+    .gheader-search__title,
+    .gheader-user__item--vendor,
+    .gheader-user__item--applicant,
+    .gheader-user__item--provisional,
+    .gheader-user__item--temporary {
+      display: none !important;
+    }
+  
+    .gheader {
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.35);
+    }
+    .gheader-main {
+      width: 100%;
+    }
+    .gheader-main__inner {
+      margin: 0 auto;
+    }
+    .gheader-main__body {
+      height: auto;
+    }
+    .is-ua-smartdevice .gheader__logo {
+      top: 0;
+    }
+    .main-container {
+      padding-top: 143px!important; /* gheader-main__body + gheader-tab */
+    }
+    .is-local-menu .main-container {
+      padding-top: 194px!important;
+    }
+    /* logo */
+    .gheader__logo {
+      width: 100%;
+      height: 95px;
+      padding-top: 14px;
+      background: #fff;
+      position: relative;
+      z-index: 105;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+    .gheader__logo-id {
+      width: 246px;
+      margin: 0 auto 7px auto;
+    }
+    .gheader__logo-btn {
+      display: block;
+      width: 243px;
+      height: 33px;
+      background: url(/r04_assets/img/common/logo-sp-2023.png) 0 0 no-repeat;
+      background-size: 243px 33px;
+    }
+    .gheader__logo-tag {
+      font-size: 130%;
+      line-height: 1.385;
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* IT導入補助金2021年交付規程・公募要領 */
+    .gheader-user__item--gBizID_delivery_rules {
+      margin-bottom: 3px;
+      text-align: center;
+      position: relative;
+      width: auto;
+      bottom: auto;
+      right: auto;
+    }
+    .gBizID_block {
+      margin-top: 5px;
+      background: #0097cf;
+    }
+    .delivery_rules_bnr {
+      width: 182px;
+      margin-left: 2px;
+      position: absolute;
+      top: 44px;
+      left: 325px;
+    }
+    .delivery_rules_btn {
+      display: inline-block;
+      /* width: 50%; */
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background-color: #fff;
+      color: #359440;
+      border: #359440 2px solid;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .security-type_btn {
+      display: inline-block;    
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      color: #fff;
+      border: #00af4f 2px solid;
+      background-color: #00af4f;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .multiple-type_btn {
+      display: inline-block;
+      /* width: 50%; */
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      /* background-color: #fff;
+      color: #cd532f;
+      border: #cd532f 2px solid; */
+      color: #fff;
+      background-color: #cd532f;
+      border: #cd532f 2px solid;
+      text-align: center;
+      padding: 3px 2px 4px;
+    }
+    .gheader-user__item--gBizID_delivery_rules .delivery_rules_btn {
+      padding: 3px 2px 5px;
+    }
+    .delivery_rules_btn .user-report-btn__label {
+      font-size: 140%;
+      line-height: inherit;
+    }
+    .gheader-user__item--gBizID_delivery_rules .gBizID-btn {
+      /* display: inline-block;
+      width: 49%;
+      padding-top: 2px; */
+      display: inline-block;
+      width: auto;
+      height: 44px;
+    }
+    .gheader-user__item--gBizID_delivery_rules .gBizID-btn img {
+      width: 100%;
+    }
+    /* タブ */
+    .gheader-tab {
+      width: 100%;
+      position: relative;
+      z-index: 105;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+    .gheader-tab::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .gheader-tab__item {
+      width: 50%;
+      float: left;
+    }
+    .gheader-tab__btn {
+      display: block;
+      width: 100%;
+      height: 48px;
+    }
+  
+    .gheader-tab__ico {
+      width: 15px;
+      height: 12px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      margin-right: 11px;
+    }
+    .gheader-tab__ico::before,
+    .gheader-tab__ico::after {
+      content: "";
+    }
+    .gheader-tab__ico::before,
+    .gheader-tab__ico::after,
+    .gheader-tab__ico i {
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      line-height: 2px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+    }
+    .gheader-tab__ico::before {
+      top: 0;
+    }
+    .gheader-tab__ico::after {
+      bottom: 0;
+    }
+    .gheader-tab__ico i {
+      top: 50%;
+      margin-top: -1px;
+    }
+    .gheader-tab__label {
+      font-size: 160%;
+      line-height: 48px;
+      font-weight: bold;
+      color: #fff;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .gheader-tab__item--menu .gheader-tab__btn {
+      background: #359440;
+    }
+    .gheader-tab__item--purpose .gheader-tab__btn {
+      background: #f57a0d;
+    }
+  
+    .gheader-menu__body {
+      width: 100%;
+      background: #4088c8;
+      background: #eaf4ec;
+    }
+  
+    /* 検索 */
+    .gheader-search {
+      padding: 20px 0 15px;
+    }
+    .gheader-search--menu {
+      border-bottom: #70a6d6 1px solid;
+      border-bottom: #fff 1px solid;
+    }
+    .gheader-search__body {
+      margin: 0 10px;
+    }
+    .gheader-search__form {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+    .gheader-search__input {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .gheader-search__btn {
+      display: table-cell;
+      width: 79px;
+      vertical-align: middle;
+    }
+    .gheader-search__text {
+      display: block;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 2px 0 0 2px;
+      background-color: #fff;
+      outline: 0;
+      resize: none;
+      margin: 0;
+      padding: 0 0.5em;
+      zoom: 1;
+      border: none;
+      font-size: 160%;
+      height: 40px;
+      line-height: 1.5em;
+    }
+    .gheader-search__submit {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: 0;
+      margin: 0;
+      padding: 0;
+      zoom: 1;
+      border: none;
+      cursor: pointer;
+      border-radius: 0 2px 2px 0;
+      font-size: 150%;
+      font-weight: bold;
+      text-align: center;
+      width: 79px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #359440;
+      color: #fff;
+      letter-spacing: 0.5em;
+      text-indent: 0.5em;
+    }
+    .gheader-search--purpose .gheader-search__submit {
+      background-color: #9e0505;
+    }
+  
+    .gheader-search__applicant {
+      margin-top: 20px;
+    }
+    .gheader-search__applicant::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .gheader-search__item {
+      float: left;
+      width: calc(50% - 5px);
+    }
+    .gheader-search__item:last-child {
+      float: right;
+    }
+    .applicant-search__btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background: #fff;
+      color: #ff5c73;
+    }
+    .applicant-search__label {
+      border: #ff5c73 1px solid;
+      padding: 5px 0 4px 0;
+      display: block;
+      font-size: 140%;
+      line-height: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    /* グロナビ */
+    .gheader-gnav {
+      padding: 15px 0;
+      border-bottom: #70a6d6 1px solid;
+      border-bottom: #fff 1px solid;
+    }
+    .gheader-gnav__body {
+      margin: 0 10px;
+    }
+    .gheader-gnav__item {
+      margin-top: 4px;
+      position: relative;
+    }
+    .gheader-gnav__item:first-child {
+      margin-top: 0;
+    }
+    .gheader-gnav__item--purpose {
+      display: none;
+    }
+    .gheader-gnav__btn {
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      display: block;
+      padding: 0 20px;
+      border-radius: 2px;
+    }
+    .gheader-gnav__label {
+      font-size: 150%;
+      line-height: 40px;
+      font-feature-settings: "palt";
+      font-weight: bold;
+    }
+    .gheader-gnav__label br {
+      display: none;
+    }
+  
+    /* 事業概要と後年報告 */
+    .gheader-user {
+      padding: 15px 0;
+      border-bottom: #70a6d6 1px solid;
+      border-bottom: #fff 1px solid;
+    }
+    .gheader-user__body {
+      margin: 0 10px;
+    }
+    .delivery_rules_btn.u-hide-pc {
+      display: block;
+      width: 100%;
+    }
+    .user-report-btn {
+      border-radius: 2px;
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background: #fff;
+      color: #9c059e;
+      border: #9c059e 2px solid;
+      text-align: center;
+      padding: 6px 10px;
+    }
+    .user-report-btn__label {
+      display: inline-block;
+      font-size: 150%;
+      line-height: 1.4667;
+      font-weight: bold;
+    }
+  
+    /* よくある質問 */
+    .user-faq-btn {
+      border-radius: 2px;
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background: #fff;
+      color: #05759e;
+      border: #05759e 2px solid;
+      text-align: center;
+      padding: 6px 10px;
+    }
+    .user-faq-btn__label {
+      display: inline-block;
+      font-size: 150%;
+      line-height: 1.4667;
+      font-weight: bold;
+    }
+  
+    /* 関連資料・動画等 */
+    .user-eventinformation-btn {
+      border-radius: 2px;
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background: #fff;
+      color: #a97d1d;
+      border: #a97d1d 2px solid;
+      text-align: center;
+      padding: 6px 10px;
+    }
+    .user-eventinformation-btn__label {
+      display: inline-block;
+      font-size: 150%;
+      line-height: 1.4667;
+      font-weight: bold;
+    }
+  
+    /* ユーティリティー */
+    .gheader-utility {
+      padding: 15px 0;
+      top: 0;
+    }
+    .gheader-utility__body {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 10px;
+    }
+    .gheader-utility__item {
+      flex: 0 1 50%;
+    }
+    .gheader-utility__item--simulator {
+      order: 1;
+    }
+    .gheader-utility__item--download {
+      order: 2;
+    }
+    .gheader-utility__item--contact {
+      order: 3;
+    }
+    .gheader-utility__item--faq {
+      order: 4;
+    }
+    .gheader-utility__item--reduction-entry {
+      order: 4;
+    }
+    .gheader-utility__item--facebook {
+      order: 5;
+    }
+    .gheader-utility__item--sme {
+      order: 6;
+    }
+    .gheader-utility__btn {
+      height: 40px;
+      background: #359440;
+      display: block;
+      border-radius: 2px;
+      text-align: center;
+      color: #fff;
+    }
+    .gheader-utility__item--simulator .gheader-utility__btn {
+      margin-right: 2px;
+    }
+    .gheader-utility__item--download .gheader-utility__btn {
+      margin-left: 2px;
+    }
+    .gheader-utility__item--contact .gheader-utility__btn {
+      margin-right: 2px;
+      margin-top: 4px;
+    }
+    .gheader-utility__item--faq .gheader-utility__btn {
+      margin-left: 2px;
+      margin-top: 4px;
+    }
+    .gheader-utility__item--reduction-entry .gheader-utility__btn {
+      margin-right: 2px;
+      margin-top: 4px;
+    }
+    .gheader-utility__item--facebook .gheader-utility__btn {
+      margin-top: 4px;
+      margin-left: 2px;
+    }
+    .gheader-utility__item--sme .gheader-utility__btn {
+      margin-top: 4px;
+    }
+    .gheader-utility__btn::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-right: 4px;
+    }
+    .gheader-utility__label {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 120%;
+      line-height: 40px;
+      font-weight: bold;
+      font-feature-settings: "palt";
+    }
+    .gheader-utility__item--simulator .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-simulator-sp.png);
+      background-size: contain;
+    }
+    .gheader-utility__item--download .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-download-sp.png);
+    }
+    .gheader-utility__item--contact .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-contact-sp.png);
+    }
+    .gheader-utility__item--faq .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-faq-sp.png);
+    }
+    .gheader-utility__item--reduction-entry .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-reduction-entry-sp.png);
+    }
+    .gheader-utility__item--facebook .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-facebook-sp.png);
+    }
+    .gheader-utility__item--sme .gheader-utility__btn::before {
+      background-image: url(/r04_assets/img/sprite_sp/ico-gheader-utility-sme-sp.png);
+    }
+    .gheader-utility__item--facebook .gheader-utility__btn::after,
+    .gheader-utility__item--sme .gheader-utility__btn::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-left: 4px;
+      background-image: url(/r04_assets/img/sprite_sp/ico-blank-white-sp.png);
+    }
+  
+    /* 閉じる */
+    .gheader-close {
+    }
+    .gheader-close {
+      text-align: center;
+      padding: 20px 0 100px 0;
+    } 
+    .gheader-close--purpose {
+      padding-top: 36px;
+      text-align: center;
+      padding: 20px 0 100px 0;
+    }
+    .gheader-close__btn {
+      display: inline-block;
+    }
+    .gheader-close__label {
+      font-size: 200%;
+      line-height: 25px;
+      color: #359440;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .gheader-close__ico {
+      display: inline-block;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      margin-left: 12px;
+    }
+    .gheader-close__ico::before,
+    .gheader-close__ico::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 2px;
+      background: #359440;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -1px 0 0 -18px;
+    }
+    .gheader-close__ico::before {
+      transform: rotate(-45deg);
+    }
+    .gheader-close__ico::after {
+      transform: rotate(45deg);
+    }
+    .gheader-close--purpose .gheader-close__label {
+      color: #333;
+    }
+    .gheader-close--purpose .gheader-close__ico::before,
+    .gheader-close--purpose .gheader-close__ico::after {
+      background: #333;
+    }
+  
+    .gheader-gnav__sp-btn {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .gheader-gnav__sp-btn::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 8px;
+      width: 12px;
+      height: 10px;
+      border-top: 10px solid #000;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+    .gheader-gnav__item--open .gheader-gnav__sp-btn::before {
+      transform: rotate(180deg);
+    }
+    .gheader-accordionmenu-sp {
+      transform: scale(1, 0);
+      transform-origin: center top;
+      height: 0;
+      transition: 0.25s;
+      z-index: 1000;
+    }
+    .gheader-accordionmenu-sp__inner {
+      background-color: #e4e4e4;
+    }
+    .gheader-gnav__item--open .gheader-accordionmenu-sp {
+      transform: scale(1, 1);
+      height: auto;
+    }
+    .gheader-acm-block__head {
+      border-top: 2px solid #d7d7d7;
+      border-bottom: 2px solid #d7d7d7;
+      background-color: #f4f4f4;
+    }
+    .gheader-acm-block-ttl {
+      font-size: 140%;
+      font-weight: bold;
+      line-height: 1.3333333333333333;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+    .gheader-acm-block__contents {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+    }
+    .gheader-acm-sub-ttl {
+      font-size: 140%;
+      padding-top: 14px;
+      padding-bottom: 8px;
+      padding-left: 10px;
+      font-weight: bold;
+    }
+    .gheader-acm-itemlist > li {
+      margin-top: 4px;
+    }
+    .gheader-acm-item {
+      background-color: #fff;
+      border-radius: 2px;
+    }
+    .gheader-gnav__item--first-one.gheader-gnav__item--open .gheader-acm-item {
+      padding: 10px;
+    }
+    .gheader-acm-item > a {
+      display: flex;
+      flex-direction: row;
+    }
+    .gheader-acm-item__label {
+      font-size: 120%;
+      font-weight: bold;
+      line-height: 1.333;
+      font-feature-settings: "palt";
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .gheader-acm-item__img {
+      width: 56px;
+      height: 48px;
+      padding-left: 9px;
+      padding-right: 9px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    .gheader-acm-item__img > img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .gheader-acm-item > a[target="_blank"] .gheader-acm-item__label span::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 11px;
+      background: url(/r04_assets/img/sprite_sp/ico-blank-s-dark-gray-sp.png) 50%
+        50% no-repeat;
+      background-size: auto;
+      -webkit-background-size: 14px 11px;
+      background-size: 14px 11px;
+      margin-left: 5px;
+    }
+    .gheader-user__item--security,
+    .gheader-user__item--report,
+    .gheader-user__item--faq,
+    .gheader-user__item--eventinformation,
+    .gheader-user__item--multiple-type {
+      width: 100%;
+    }
+    .gheader-user__item--report,
+    .gheader-user__item--faq,
+    .gheader-user__item--eventinformation,
+    .gheader-user__item--multiple-type {
+      margin-top: 3px;
+      position: relative;
+      right: 0;
+    }
+    .user-report-btn {
+      height: auto;
+    }
+  }
+  @media all and (max-width: 370px) {
+    .gheader-utility__label {
+      font-size: 110%;
+    }
+    .gheader__logo {
+      height: 125px;
+    }
+  }
+  @media print {
+    .gheader {
+      position: absolute;
+    }
+    .gheader-sub {
+      display: none;
+    }
+  }
+  @media all and (min-width: 761px) {
+    .gheader-sub {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+  
+    .is-opened-purpose-pc .gheader-sub {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      bottom: 166px;
+      z-index: 100;
+    }
+  
+    .gheader-purpose {
+      background: none;
+    }
+    .is-opened-purpose-pc .gheader-purpose {
+      background: #fce6cc;
+    }
+    .is-opened-purpose-pc body {
+      width: 100%;
+      position: fixed;
+    }
+    .gheader-close--purpose {
+      text-align: center;
+      padding: 0 0 36px 0;
+    }
+    .gheader-topclose--purpose {
+      padding: 0;
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .gheader-close__btn {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .gheader-close--purpose .gheader-close__label {
+      color: #333;
+    }
+    .gheader-close--purpose .gheader-close__ico::before,
+    .gheader-close--purpose .gheader-close__ico::after {
+      background: #333;
+    }
+    .gheader-close__label {
+      font-size: 200%;
+      line-height: 25px;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .gheader-close__ico {
+      display: inline-block;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      margin-left: 12px;
+    }
+    .gheader-close__ico::before {
+      transform: rotate(-45deg);
+    }
+    .gheader-close__ico::after {
+      transform: rotate(45deg);
+    }
+    .gheader-close__ico::before,
+    .gheader-close__ico::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 2px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -1px 0 0 -18px;
+    }
+    /* 検索 */
+    .gheader-search {
+      width: 100%;
+      /* background: #ff98b0; */
+      background: #f7b466;
+    }
+    .gheader-search__body {
+      padding: 14px 16px;
+      max-width: 1032px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .gheader-search__body::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .gheader-search__form {
+      display: table;
+      float: left;
+      table-layout: fixed;
+      width: calc(100% - 382px);
+      padding: 9px 0;
+    }
+    .gheader-search__title {
+      font-size: 160%;
+      font-weight: bold;
+      width: 130px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .gheader-search__input {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .gheader-search__btn {
+      display: table-cell;
+      width: 114px;
+      vertical-align: middle;
+    }
+    .gheader-search__text {
+      display: block;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 5px;
+      background-color: #fff;
+      outline: 0;
+      resize: none;
+      margin: 0;
+      padding: 0 0.5em;
+      zoom: 1;
+      border: none;
+      font-size: 160%;
+      height: 34px;
+      line-height: 34px;
+    }
+    .gheader-search__submit {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: 0;
+      margin: 0;
+      padding: 0;
+      zoom: 1;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 160%;
+      font-weight: bold;
+      text-align: center;
+      width: 102px;
+      height: 34px;
+      line-height: 34px;
+      background-color: #9e0505;
+      color: #fff;
+      letter-spacing: 0.5em;
+      text-indent: 0.5em;
+      margin-left: 12px;
+    }
+  
+    .no-touchevents .gheader-search__submit {
+      -webkit-transition: background-color 0.15s linear, color 0.15s linear;
+      transition: background-color 0.15s linear, color 0.15s linear;
+    }
+    .no-touchevents .gheader-search__submit:hover {
+      background-color: #fce6cc;
+      color: #9e0505;
+    }
+  
+    .gheader-search__applicant {
+      float: right;
+    }
+    .gheader-search__applicant::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .gheader-search__item {
+      float: left;
+      width: 168px;
+      margin-left: 7px;
+    }
+    .applicant-search__btn {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 2px;
+      background: #fff;
+      color: #ff5c73;
+    }
+    .applicant-search__label {
+      border: #ff5c73 1px solid;
+      padding: 6px 0 4px 0;
+      display: block;
+      font-size: 140%;
+      line-height: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    .no-touchevents .applicant-search__btn {
+      -webkit-transition: background-color 0.15s linear, color 0.15s linear;
+      transition: background-color 0.15s linear, color 0.15s linear;
+    }
+    .no-touchevents .applicant-search__btn:hover {
+      background-color: #ff5c73;
+      color: #fff;
+    }
+    .no-touchevents .applicant-search__btn .applicant-search__label {
+      -webkit-transition: border 0.15s linear;
+      transition: border 0.15s linear;
+    }
+    .no-touchevents .applicant-search__btn:hover .applicant-search__label {
+      border-color: #fff;
+    }
+  
+    .gheader-purpose__nav {
+      /* padding: 24px 0px; */
+      padding: 12px 0px 0 0;
+      max-width: 1032px;
+      margin: 0 auto;
+      overflow-y: scroll;
+      display: flex;
+    }
+    .gheader-purpose__list {
+      display: block;
+      flex-direction: row;
+      width: 49.5%;
+      /* border-left:#f7b466 1px solid; */
+    }
+    .gheader-purpose__list:first-child {
+      margin-right: 1%;
+    }
+    .gheader-purpose__item {
+      width: 100%;
+      /* border-right:#f7b466 1px solid; */
+      padding: 0 0 12px 0;
+    }
+  
+    /* サブ */
+    .gheader-purpose-primary {
+      padding: 0 15px;
+      margin-bottom: 24px;
+      font-size: 140%;
+      line-height: 1.5;
+    }
+    .gheader-purpose-primary:first-child {
+      background-color: #fff;
+      min-height: 30px;
+      height: auto;
+      padding: 0 0;
+      font-size: 160%;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .gheader-purpose-primary:first-child > a {
+      padding: 0 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      border-left: 4px solid #9e0505;
+      min-height: 30px;
+    }
+    .gheader-purpose-secondary + .gheader-purpose-primary {
+      margin-top: 22px;
+      margin-bottom: 8px;
+      font-size: 140%;
+    }
+    .gheader-purpose-primary__btn {
+      pointer-events: none;
+    }
+    .gheader-purpose-primary__label {
+      font-weight: bold;
+    }
+  
+    /* サブ */
+    .gheader-purpose-secondary {
+      padding: 0 10px 0 9px;
+    }
+    .gheader-purpose-secondary__item:not(:first-child) {
+      margin-top: 12px;
+    }
+    .gheader-purpose-secondary__btn {
+      color: #333333;
+      font-size: 120%;
+      line-height: 1.43;
+      display: block;
+      position: relative;
+      padding-left: 1em;
+    }
+    .gheader-purpose-secondary__btn::before {
+      content: "・";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #9e0505;
+      font-weight: bold;
+    }
+    .gheader-purpose-secondary__btn[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 10px;
+      background: url(/r04_assets/img/sprite_pc/ico-blank-s-dark-gray-pc.png) 50%
+        50% no-repeat;
+      margin-left: 5px;
+    }
+    .gheader-purpose-secondary__btn span {
+      text-decoration: underline;
+    }
+    .no-touchevents .gheader-purpose-secondary__btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .gheader-purpose-secondary__btn:hover {
+      color: #9e0505;
+    }
+    .no-touchevents .gheader-purpose-secondary__btn:hover span {
+      text-decoration: none;
+    }
+    .gheader-purpose-secondary__inner {
+      color: #333333;
+      font-size: 140%;
+      line-height: 1.43;
+      display: block;
+      position: relative;
+      padding-left: 1em;
+    }
+    .gheader-purpose-secondary__inner::before {
+      content: "・";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ff5c73;
+      font-weight: bold;
+    }
+    .gheader-purpose-tertiary__btn {
+      display: block;
+      position: relative;
+      padding-left: 1em;
+      margin-top: 12px;
+    }
+    .gheader-purpose-tertiary__btn::before {
+      content: "・";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #333333;
+    }
+    .gheader-purpose-tertiary__btn[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 10px;
+      background: url(/r04_assets/img/sprite_pc/ico-blank-s-dark-gray-pc.png) 50%
+        50% no-repeat;
+      margin-left: 5px;
+    }
+    .gheader-purpose-tertiary__btn span {
+      text-decoration: underline;
+    }
+    .no-touchevents .gheader-purpose-tertiary__btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .gheader-purpose-tertiary__btn:hover {
+      color: #ff5c73;
+    }
+    .no-touchevents .gheader-purpose-tertiary__btn:hover span {
+      text-decoration: none;
+    }
+    .gheader-purpose-quaternary {
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 20px;
+    }
+    .gheader-purpose-quaternary .gheader-purpose-quaternary__list {
+      width: 49%;
+    }
+    .gheader-purpose-quaternary_top {
+      background-color: #c3c2c2 !important;
+      min-height: 48px;
+      height: auto;
+      padding: 0 0;
+      font-size: 115% !important;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .gheader-purpose-quaternary_top a {
+      border-left: none !important;
+    }
+    .gheader-purpose-quaternary li:first-child {
+      margin-right: 2%;
+    }
+  }
+  @media all and (min-width: 761px) and (max-width: 980px) {
+    .gheader-search__form {
+      width: calc(100% - 302px);
+    }
+  
+    .gheader-search__item {
+      width: 138px;
+    }
+    .applicant-search__label {
+      font-size: 130%;
+    }
+    .gheader-purpose-primary:first-child {
+      min-height: 64px;
+    }
+    .gheader-purpose-primary:first-child > a {
+      min-height: 64px;
+    }
+  }
+  @media all and (max-width: 760px) {
+    .gheader-menu,
+    .gheader-sub {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 143px);
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #fff;
+      z-index: 104;
+  
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .is-opened-purpose-sp .gheader-sub {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    .is-opened-menu-sp .gheader-menu {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    .gheader-purpose {
+      background: #ffcbd7;
+      background: #f7b466;
+    }
+    .gheader-purpose__list {
+      margin: 0 10px;
+    }
+    .gheader-purpose__item {
+      margin-top: 4px;
+    }
+    .gheader-purpose-primary__btn {
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      display: block;
+      padding: 0 25px 0 18px;
+      border-left: #9e0505 7px solid;
+    }
+    .gheader-purpose-primary--lv2 .gheader-purpose-primary__btn {
+      border-left: none;
+      background: #e4e4e4;
+      background: #fce6cc;
+      height: auto;
+      padding-top: 4px;
+    }
+    .gheader-purpose-primary__label {
+      font-size: 150%;
+      line-height: 40px;
+      font-feature-settings: "palt";
+      font-weight: bold;
+    }
+    .gheader-purpose-primary--lv2 .gheader-purpose-primary__label {
+      line-height: 1.5;
+    }
+    .gheader-purpose-secondary {
+      background: #e4e4e4;
+      background: #fce6cc;
+    }
+    .gheader-purpose-secondary__item {
+      margin-top: 10px;
+      padding: 0 25px;
+    }
+    .gheader-purpose-secondary__item:first-child {
+      margin-top: 0;
+      padding-top: 15px;
+    }
+    .gheader-purpose-secondary__item:last-child {
+      padding-bottom: 15px;
+    }
+    .gheader-purpose-secondary__btn {
+      color: #333333;
+      font-size: 140%;
+      display: block;
+      position: relative;
+      padding-left: 15px;
+    }
+    .gheader-purpose-secondary__btn::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 4px;
+      background: #9e0505;
+    }
+    .gheader-purpose-secondary__btn[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 11px;
+      background: url(/r04_assets/img/sprite_sp/ico-blank-s-dark-gray-sp.png) 50%
+        50% no-repeat;
+      -webkit-background-size: 14px 11px;
+      background-size: 14px 11px;
+      margin-left: 5px;
+    }
+    .gheader-purpose-secondary__btn span {
+      font-feature-settings: "palt";
+    }
+    .gheader-purpose-primary__label br,
+    .gheader-purpose-secondary__btn br {
+      display: none;
+    }
+    .gheader-purpose-secondary__inner {
+      color: #333333;
+      font-size: 140%;
+      display: block;
+      position: relative;
+      padding-left: 15px;
+    }
+    .gheader-purpose-secondary__inner::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 4px;
+      background: #ff5c73;
+    }
+    .gheader-purpose-primary--lv2
+      + .gheader-purpose-secondary
+      > .gheader-purpose-secondary__item:first-child {
+      padding-top: 11px;
+    }
+  
+    .gheader-purpose-tertiary__btn {
+      display: block;
+      position: relative;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+    .gheader-purpose-tertiary__btn::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 1px;
+      top: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 3px;
+      background: #333333;
+    }
+    .gheader-purpose-tertiary__btn[target="_blank"]::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 11px;
+      background: url(/r04_assets/img/sprite_sp/ico-blank-s-dark-gray-sp.png) 50%
+        50% no-repeat;
+      -webkit-background-size: 14px 11px;
+      background-size: 14px 11px;
+      margin-left: 5px;
+    }
+    .gheader-purpose-tertiary__btn span {
+      font-feature-settings: "palt";
+    }
+    .gheader-purpose-quaternary {
+      margin-top: 10px;
+    }
+    .gheader-purpose-quaternary .gheader-purpose-quaternary__list {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .gheader-purpose-quaternary_top {
+      background-color: #c3c2c2 !important;
+      padding: 5px;
+    }
+    .gheader-purpose-quaternary_top .gheader-purpose-primary__btn {
+      background-color: #c3c2c2 !important;
+    }
+  }
+  
+  @media all and (min-width: 761px) {
+    .gheader-dropmenu {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+  
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        -webkit-transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      background-color: #fff;
+      pointer-events: none;
+    }
+    .is-opened-first-one-pc .gheader-dropmenu--first-one,
+    .is-opened-applicant-pc .gheader-dropmenu--applicant,
+    .is-opened-vendor-pc .gheader-dropmenu--vendor {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+      box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+      pointer-events: all;
+    }
+    .dropnav-blocklist {
+      display: inline-flex;
+      flex-direction: row;
+    }
+    .dropnav-block {
+    }
+    .dropnav-block_col5 {
+      width: calc((100% - 40px) / 5);
+    }
+    .dropnav-block__contents {
+      display: flex;
+      flex-direction: row;
+    }
+    .dropnav-block + .dropnav-block {
+      margin-left: 10px;
+    }
+    .gheader-dropmenu__body {
+      max-width: 1366px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .dropnav-block-ttl {
+      font-size: 12px;
+      line-height: 1.333333333;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding: 6px;
+      background-color: #f0f0f0;
+      text-align: center;
+      font-weight: bold;
+    }
+    .dropnav-block-ttl.dropnav-block-ttl_multiple {
+      background-color: #cd532f;
+      color: #fff;
+    }
+    .dropnav-block__sub-ttl {
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.333333333;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f0f0;
+      font-weight: bold;
+    }
+    .dropnav-block-ttl a {
+      display: block;
+    }
+    .dropnav-block-lv1 {
+      width: auto;
+    }
+    .dropnav-block-lv2 {
+      width: 174px;
+    }
+    .dropnav-block-lv2 + .dropnav-block-lv2 {
+      margin-left: 16px;
+    }
+    .dropnav-block--lv2 .dropnav-block-ttl {
+      background-color: transparent;
+      border-bottom: #f0f0f0 2px solid;
+      padding-top: 8px;
+      padding-bottom: 7px;
+    }
+    .dropnav-item {
+      border-bottom: 2px solid #f0f0f0;
+      width: 174px;
+    }
+    .dropnav-item > a {
+      display: flex;
+      flex-direction: row;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      min-height: 52px;
+      transform: 0.25s;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    .dropnav-item > a:hover {
+      opacity: 0.5;
+    }
+    .dropnav-item__img {
+      width: 44px;
+    }
+    .dropnav-item__label {
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-feature-settings: "palt";
+      letter-spacing: -0.03em;
+      text-align: left;
+      flex-grow: 1;
+      white-space: nowrap;
+    }
+    .dropnav-item__label_dots {
+      padding-left: 1rem;
+      position: relative;
+    }
+    .dropnav-item__label_dots span {
+      text-decoration: underline;
+    }
+    .dropnav-item__label_dots::before {
+      content: "・";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9e0505;
+      font-weight: bold;
+    }
+    .dropnav-item__ico-blank {
+      display: inline-block;
+      background-image: url(/r04_assets/img/common/header/ico-blank-s-dark-gray-pc.png);
+      background-repeat: no-repeat;
+      width: 14px;
+      height: 13px;
+      background-position: center bottom;
+      vertical-align: middle;
+    }
+  }
+  @media all and (max-width: 760px) {
+    .gheader-dropmenu {
+      display: none;
+    }
+  }
+  /* --------------------------------------------------------------------------
+     FOOTER TEL 「事務局（お問い合わせ先）」
+     ----------------------------------------------------------------------- */
+  /* pc・sp共通 */
+  .footer_green_tel {
+    background: #2fb8b1;
+  }
+  .footer_green_tel .section__contents {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .footer_green_tel .section__panel {
+    padding: 25px 30px 40px;
+  }
+  .footer_green_tel h2 {
+    color: #fff;
+  }
+  .footer_green_tel h2::after {
+    display: none;
+  }
+  .footer_green_tel .inquiry-header {
+    color: #000;
+  }
+  /* pc */
+  @media all and (min-width: 761px) {
+    .main-container .inquiry-header {
+      text-align: center;
+      font-size: 260%;
+      border: none;
+      padding-bottom: 0;
+    }
+    .inquiry-tel {
+      text-align: center;
+    }
+    .navidial {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .navidial__ico {
+      width: 56px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .navidial__ico img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+    .navidial__txt {
+      margin-left: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+    }
+    .navidial__tel {
+      font-weight: bold;
+      color: #003060;
+      font-size: 520%;
+      line-height: 1;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+        Arial, sans-serif;
+    }
+    .navidial__note {
+      font-size: 160%;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+    .iptel {
+      display: inline-block;
+    }
+    .iptel__ico {
+      width: 120px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .iptel__ico img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+    .iptel__txt {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      text-align: left;
+    }
+    .iptel__tel {
+      font-weight: bold;
+      color: #333;
+      font-size: 360%;
+      line-height: 1;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+        Arial, sans-serif;
+    }
+    .inquiry-note {
+      margin-top: 0px;
+      margin-left: 117px;
+      text-align: left;
+    }
+    .inquiry-note__main {
+      font-size: 180%;
+      line-height: 1.5;
+      display: inline-block;
+    }
+    .inquiry-note__sub {
+      font-size: 160%;
+      line-height: 1.5;
+      display: inline-block;
+    }
+  }
+  @media all and (min-width: 761px) and (max-width: 980px) {
+    .navidial__tel {
+      font-size: 320%;
+    }
+    .iptel__tel {
+      font-size: 260%;
+    }
+  }
+  @media all and (max-width: 760px) {
+    .main-container .inquiry-header {
+      text-align: center;
+      font-size: 140%;
+      border: none;
+      padding-bottom: 0;
+    }
+    .inquiry-tel {
+      text-align: center;
+    }
+    .navidial {
+      margin-bottom: 25px;
+    }
+    .navidial__ico {
+      width: 36px;
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 2px;
+    }
+    .navidial__ico img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+    .navidial__txt {
+      margin-left: 4px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+    }
+    .navidial__tel {
+      font-weight: bold;
+      color: #003060;
+      font-size: 320%;
+      line-height: 1;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+        Arial, sans-serif;
+    }
+    .navidial__note {
+      font-size: 140%;
+      font-weight: bold;
+      margin-top: 6px;
+      padding-right: 40px;
+    }
+    .iptel {
+      display: inline-block;
+    }
+    .iptel__ico {
+      width: 80px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .iptel__ico img {
+      width: 100%;
+      vertical-align: bottom;
+    }
+    .iptel__txt {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      text-align: left;
+    }
+    .iptel__tel {
+      font-weight: bold;
+      color: #333;
+      font-size: 240%;
+      line-height: 1;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+        Arial, sans-serif;
+    }
+    .inquiry-note {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .inquiry-note p {
+      margin: 0;
+    }
+    .inquiry-note__main {
+      font-size: 140%;
+      line-height: 1.5;
+      font-feature-settings: "palt";
+    }
+    .inquiry-note__sub {
+      font-size: 100%;
+      line-height: 1.5;
+    }
+    .inquiry-note .u-strong a {
+      text-decoration: underline;
+    }
+    .c-ico::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .c-ico--blank {
+      display: inline-block;
+      width: 12px;
+      height: 10px;
+      vertical-align: top;
+      position: relative;
+    }
+    .c-ico--blank::before {
+      width: 12px;
+      height: 10px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-s-dark-gray-pc.png);
+    }
+  }
+  @media all and (max-width: 370px) {
+    .navidial__tel {
+      font-size: 280%;
+    }
+    .iptel__tel {
+      font-size: 220%;
+    }
+    .inquiry-note__main {
+      font-size: 130%;
+    }
+    .inquiry-note__sub {
+      font-size: 100%;
+    }
+  }
+  
+  /* --------------------------------------------------------------------------
+      GLOBAL FOOTER
+     ----------------------------------------------------------------------- */
+  @media all and (min-width: 761px) {
+    .gfooter-nav {
+      width: 100%;
+      background: #359440;
+      border: solid #ffffff;
+      border-width: 1px 0;
+    }
+    .gfooter-nav__body {
+      max-width: 1366px;
+      /* max-width: 1024px; */
+      margin: 0 auto;
+      padding: 15px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .gfooter-nav__item {
+      display: inline-block;
+      vertical-align: top;
+      margin: 8px 12px;
+    }
+    .gfooter-nav__btn {
+      color: #fff;
+    }
+    .gfooter-nav__btn[href$=".pdf"]::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 14px;
+      height: 18px;
+      margin-left: 4px;
+      background: url(/r04_assets/img/sprite_pc/ico-pdf-s-pc.png) 50% 50%
+        no-repeat;
+      background-size: 14px 18px;
+    }
+    .gfooter-nav__btn.blank::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-left: 4px;
+      background-image: url(/r04_assets/img/sprite_pc/ico-blank-white-pc.png);
+    }
+    .gfooter-nav__btn span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 140%;
+      line-height: 18px;
+    }
+  
+    /* HOVER */
+    .no-touchevents .gfooter-nav__btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .gfooter-nav__btn:hover {
+      color: #000;
+    }
+  }
+  @media all and (min-width: 761px) and (max-width: 980px) {
+  }
+  @media all and (max-width: 760px) {
+    .gfooter-nav {
+      width: 100%;
+      background: #359440;
+    }
+    .gfooter-nav__body {
+      margin: 0 8px;
+      padding: 17px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .gfooter-nav__item {
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px 8px;
+    }
+    .gfooter-nav__btn {
+      color: #fff;
+    }
+    .gfooter-nav__btn[href$=".pdf"]::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 12px;
+      height: 15px;
+      margin-left: 3px;
+      background: url(/r04_assets/img/sprite_sp/ico-pdf-s-sp.png) 50% 50%
+        no-repeat;
+      background-size: 12px 15px;
+    }
+    .gfooter-nav__btn.blank::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 14px;
+      margin-left: 4px;
+      background-image: url(/r04_assets/img/sprite_sp/ico-blank-white-sp.png);
+    }
+    .gfooter-nav__btn span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 120%;
+      line-height: 15px;
+    }
+  }
+  /* --------------------------------------------------------------------------
+      COPYRIGHT
+     ----------------------------------------------------------------------- */
+  @media all and (min-width: 761px) {
+    .footer-copyright__body {
+      width: 100%;
+      background: #e8e8e8;
+    }
+    .footer-copyright__txt {
+      padding: 0.5em 12px 24px;
+      font-size: 140%;
+      text-align: center;
+      margin: 0;
+    }
+    .footer-copyright__txt--pb {
+      padding: 24px 12px 0.5em;
+    }
+  }
+  @media all and (max-width: 760px) {
+    .footer-copyright__body {
+      width: 100%;
+      background: #e8e8e8;
+    }
+    .footer-copyright__txt {
+      padding: 0.5em 15px 18px;
+      font-size: 120%;
+      text-align: center;
+      margin: 0;
+    }
+    .footer-copyright__txt--pb {
+      padding: 18px 15px 0.5em;
+    }
+  }
+  
+  /* --------------------------------------------------------------------------
+      MAIN CONTENT
+     ----------------------------------------------------------------------- */
+  .main-container {
+    position: relative;
+  }
+  .main-container.main-container--popup {
+    padding-top: 0 !important;
+  }
+  
+  /* --------------------------------------------------------------------------
+      FIXED BOTTOM NAV
+     ----------------------------------------------------------------------- */
+  @keyframes navFadeIn {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes navFadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+  @media all and (min-width: 761px) {
+    .fixed-bottom-nav {
+      position: fixed;
+      right: 0px;
+      bottom: 8px;
+      opacity: 1;
+      z-index: 99;
+    }
+    .is-scrolling .fixed-bottom-nav {
+      opacity: 1;
+    }
+    .is-scroll-stop .fixed-bottom-nav {
+      opacity: 1;
+    }
+    .fixed-bottom-nav__item--top {
+      margin-right: 8px;
+    }
+    .fixed-bottom-nav__item--gbiz,
+    .fixed-bottom-nav__item--portal,
+    .fixed-bottom-nav__item--mypage {
+      margin-bottom: 2px;
+    }
+    .fixed-bottom-nav__btn {
+      display: block;
+      width: 74px;
+      height: 74px;
+      position: relative;
+      margin: 0 0 0 auto;
+    }
+    .fixed-bottom-nav__item--gbiz .fixed-bottom-nav__btn,
+    .fixed-bottom-nav__item--portal .fixed-bottom-nav__btn,
+    .fixed-bottom-nav__item--mypage .fixed-bottom-nav__btn {
+      width: 96px;
+      height: 96px;
+    }
+    .fixed-bottom-nav__btn::before {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 74px;
+      border-radius: 37px;
+      background: #404040;
+      /* opacity: 0.75; */
+    }
+    .fixed-bottom-nav__item--gbiz .fixed-bottom-nav__btn::before,
+    .fixed-bottom-nav__item--portal .fixed-bottom-nav__btn::before,
+    .fixed-bottom-nav__item--mypage .fixed-bottom-nav__btn::before {
+      width: 96px;
+      height: 96px;
+    }
+    .fixed-bottom-nav__btn::after {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 74px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 74px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .fixed-bottom-nav__item--gbiz .fixed-bottom-nav__btn::after,
+    .fixed-bottom-nav__item--portal .fixed-bottom-nav__btn::after,
+    .fixed-bottom-nav__item--mypage .fixed-bottom-nav__btn::after {
+      width: 96px;
+      height: 96px;
+      background-size: 96px;
+    }
+    .fixed-bottom-nav__item--top .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-back-to-top-pc.png);
+    }
+    .fixed-bottom-nav__item--gbiz .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-gbiz-pc.png);
+    }
+    .fixed-bottom-nav__item--portal .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-portal-pc.png);
+    }
+    .fixed-bottom-nav__item--mypage .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_pc/ico-mypage-pc.png);
+    }
+  
+    /* PCはHOMEは非表示に */
+    .fixed-bottom-nav__item--home {
+      display: none;
+    }
+  
+    /* HOVER */
+    .no-touchevents .fixed-bottom-nav__btn::before {
+      -webkit-transition: opacity 0.15s linear;
+      transition: opacity 0.15s linear;
+    }
+    .no-touchevents .fixed-bottom-nav__btn:hover::before {
+      opacity: 0.45;
+    }
+  }
+  @media all and (min-width: 761px) and (max-width: 980px) {
+  }
+  @media all and (max-width: 760px) {
+    .fixed-bottom-nav {
+      position: fixed;
+      right: 8px;
+      bottom: 8px;
+      z-index: 100;
+    }
+    .is-scrolling .fixed-bottom-nav {
+      animation: navFadeIn 0.3s linear forwards;
+    }
+    .is-scroll-stop .fixed-bottom-nav {
+      animation: navFadeOut 0.8s linear forwards;
+    }
+  
+    .fixed-bottom-nav__item--home {
+      margin-top: 6px;
+    }
+    .fixed-bottom-nav__btn {
+      display: block;
+      width: 56px;
+      height: 56px;
+      position: relative;
+    }
+    .fixed-bottom-nav__btn::before {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 56px;
+      border-radius: 28px;
+      /* opacity: 0.75; */
+    }
+    .fixed-bottom-nav__item--top .fixed-bottom-nav__btn::before {
+      background: #404040;
+    }
+    .fixed-bottom-nav__item--home .fixed-bottom-nav__btn::before {
+      background: #ff5c73;
+    }
+    .fixed-bottom-nav__btn::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 56px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 56px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  
+    .fixed-bottom-nav__item--top .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_sp/ico-back-to-top-sp.png);
+    }
+  
+    .fixed-bottom-nav__item--home .fixed-bottom-nav__btn::after {
+      background-image: url(/r04_assets/img/sprite_sp/ico-back-to-home-sp.png);
+    }
+  }
+  /* --------------------------------------------------------------------------
+      パンクズ
+     ----------------------------------------------------------------------- */
+  @media all and (min-width: 761px) {
+    .topic-path {
+      width: 100%;
+      /* background: #FFF; */
+    }
+    .topic-path--border {
+      /* border-bottom:#808080 1px solid; */
+    }
+    .topic-path__inner {
+      /* padding: 0 12px; */
+      padding: 0 22px;
+      /* max-width: 1024px; */
+      max-width: 1366px;
+      margin: 0 auto;
+    }
+    .topic-path__body {
+      padding: 20px 0;
+      padding: 20px 0 0;
+    }
+    .topic-path__body::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .topic-path__item {
+      float: left;
+    }
+    .topic-path__item::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 11px;
+      height: 11px;
+      background: url(/r04_assets/img/sprite_pc/ico-topicpath-arrow-pc.png) 50%
+        50% no-repeat;
+      background-size: contain;
+      margin: 0 14px;
+    }
+    .topic-path__item:first-child::before {
+      display: none;
+    }
+    .topic-path__btn {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 120%;
+      line-height: 1.75;
+      font-weight: bold;
+    }
+    .topic-path__item:last-child .topic-path__btn {
+      pointer-events: none;
+    }
+  
+    .topic-path__btn {
+      color: #333;
+    }
+    /* HOVER */
+    .no-touchevents .topic-path__btn {
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear;
+    }
+    .no-touchevents .topic-path__btn:hover {
+      color: #359440;
+    }
+  }
+  @media all and (min-width: 761px) and (max-width: 980px) {
+  }
+  @media all and (max-width: 760px) {
+    .topic-path {
+      display: none;
+    }
+  }

@@ -1,0 +1,29 @@
+<template>
+    <c-atoms-description-head-text
+        head-description-text={headDescriptionText}
+    >
+    </c-atoms-description-head-text>
+    <div class="sys-form">
+        <template for:each={listDocumentReferences} for:item="docRef">
+            <c-atoms-document-reference-btn
+                key={docRef.id}
+                document-label-name={docRef.labelName}
+            >
+            </c-atoms-document-reference-btn>
+        </template>
+        <c-atoms-form-head-title
+            form-head-title={formHeadTitle}
+        >
+        </c-atoms-form-head-title>
+        <c-molecules-form-url
+            description1={description1}
+            description2={description2}
+            url={url}
+        >
+        </c-molecules-form-url>
+        <c-atom-button
+            disabled={disabled}
+            button-label={labelName}>
+        </c-atom-button>
+    </div>
+</template>

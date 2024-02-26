@@ -1,0 +1,51 @@
+<template>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDXNLNW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="mq"></div>
+    <!-- GLOBAL HEADER TEMPLATE-->
+    <lightning-card>
+        <div class="gheader">
+            <div class="gheader__inner">
+                <div class="gheader__body">
+                    <div class="gheader__logo">
+                    <p class="gheader__logo-id"><a href="#" class="gheader__logo-btn">
+                        <img src={SITLogoUrl} />
+                        <span class="u-ir">IT導入補助金</span></a></p>
+                        <p class="gheader__logo-tag">令和元年度補正 サービス等生産性向上IT導入支援事業<br />令和３年度補正 サービス等生産性向上IT導入支援事業</p>
+                    </div>
+                    <!-- <% if R4::Mypage::LoginManager.login? session %>
+                    <% user_info = session[:r4] || {} %> -->
+                    <div class="gheader-mainUser">
+                    <ul class="gheader-user__body">
+                        <div class="headerLabel" style="color:#000">
+                        <!-- <p><b><%= ERB::Util.html_escape user_info[:applicationcategory__c] %></b></p> -->
+                        <p><b>交付申請番号：</b></p>
+                        <!-- <%= ERB::Util.html_escape user_info[:name] %> -->
+                        <p><b>事業者名：</b></p>
+                        <!-- <%= ERB::Util.html_escape user_info[:applicantname__c] %> -->
+                        </div>
+                        <li class="gheader-user__item gheader-user__item--mainpage">
+                        <a href="/r4/mypage/main" class="gheader-user-btn">
+                            <span class="gheader-user-btn__body">
+                            <i class="gheader-user-btn__arrow"></i><span class="gheader-user-btn__label">メインページ</span><i class="gheader-user-btn__ico"></i>
+                            </span>
+                        </a>
+                        </li>
+                        <li class="gheader-user__item gheader-user__item--logout">
+                        <a href="/r4/mypage/logout" class="gheader-user-btn">
+                            <span class="gheader-user-btn__body">
+                            <i class="gheader-user-btn__arrow"></i><span class="gheader-user-btn__label">ログアウト</span><i class="gheader-user-btn__ico"></i>
+                            </span>
+                        </a>
+                        </li>
+                    </ul>
+                    </div>
+                    <!-- <% end %> -->
+                </div>
+            </div>
+            </div>
+            <!-- End GLOBAL HEADER TEMPLATE-->
+    </lightning-card>
+</template>
