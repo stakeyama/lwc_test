@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>atomButton</members>
+        <members>atomsDescriptionHeadText</members>
+        <members>atomsDocumentReferenceBtn</members>
+        <members>atomsFormHeadTitle</members>
+        <members>atomsFormItem</members>
+        <members>atomsUrl</members>
+        <members>cssLibrary</members>
+        <members>header</members>
+        <members>moleculesFormUrl</members>
+        <members>organisms_sample01</members>
+        <members>sample_01</members>
+        <members>templateSample01</members>
+        <members>test</members>
+        <members>tutorial</members>
+        <members>tutorial2</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>59.0</version>
+</Package>
