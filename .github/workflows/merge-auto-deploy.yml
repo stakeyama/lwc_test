@@ -2,7 +2,7 @@ name: salesforce ci
 on:
   pull_request:
     branches:
-      - integration
+      - staging
     types: [closed]
 
 jobs:
