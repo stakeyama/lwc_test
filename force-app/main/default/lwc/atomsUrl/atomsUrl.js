@@ -7,6 +7,5 @@ export default class AtomsUrl extends LightningElement {
         // 「手続き画面へ」ボタンを活性
         const event = new CustomEvent('clickaction',{detail:'aaa', bubbles: true, composed: true});
         this.dispatchEvent(event);
-        // this.disabled = false;
     }
 }
