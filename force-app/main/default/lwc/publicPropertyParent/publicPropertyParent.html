@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Parent" icon-name="custom:custom53">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <!-- ↓コンボボックスで色を選択します。 -->
+                <lightning-combobox
+                    name="color"
+                    label="Color"
+                    value={color}
+                    options={options}
+                    onchange={handleChange}
+                ></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <!-- ↓子コンポーネントのパブリックプロパティ「color」に値を渡す。 -->
+                <c-public-property-child color-name={color}></c-public-property-child>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

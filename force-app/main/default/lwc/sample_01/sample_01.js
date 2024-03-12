@@ -1,9 +1,5 @@
 import { LightningElement } from 'lwc';
 import CommonStyles from './sample_01.css';
-// import CommonStyles1 from '../cssLibrary/common1.css';
-// import CommonStyles2 from '../cssLibrary/common2.css';
-// import CommonStyles3 from '../cssLibrary/common3.css';
-// import CommonStyles4 from '../cssLibrary/common4.css';
 
 export default class Sample_01 extends LightningElement {
     // データはインターフェース側に保持

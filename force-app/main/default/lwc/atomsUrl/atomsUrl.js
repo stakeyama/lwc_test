@@ -5,8 +5,12 @@ export default class AtomsUrl extends LightningElement {
 
     handleClick() {
         // 「手続き画面へ」ボタンを活性
-        const event = new CustomEvent('clickaction',{detail:'aaa', bubbles: true, composed: true});
+        const event = new CustomEvent('clickaction',
+        {
+            detail:'sample',
+            bubbles: true,
+            composed: true
+        });
         this.dispatchEvent(event);
-        // this.disabled = false;
     }
 }
